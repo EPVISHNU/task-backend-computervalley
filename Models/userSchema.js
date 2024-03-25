@@ -22,10 +22,31 @@ const userSchema=new mongoose.Schema({
         required:true,
         unique:true
     }, 
+    // dob:{
+    //     type:String,
+    //     required:true
+    // },
+    // phone:{
+    //     type:String,
+    //     required:true
+    // },
+    // address:{
+    //     type:String,
+    //     required:true
+    // },
+    // place:{
+    //     type:String,
+    //     required:true
+    // },
     password:{
         type:String,
         required:true
-    }
+    },
+    // image:{
+    //     type:String,
+    //     required:true
+    // },
+    
 })
 
 const users=mongoose.model('users',userSchema)

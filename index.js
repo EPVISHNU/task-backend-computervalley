@@ -5,10 +5,13 @@ const cors=require('cors')
 const db=require('./DB/connection')
 const router=require('./Router/router')
 
+const appMiddleware = require('./Middlewares/appMiddleWare')
+
 const pfSever=express()
 
 pfSever.use(cors())
 pfSever.use(express.json())
+pfSever.use(appMiddleware)
 pfSever.use(router)
 
 const port=4000||process.env.port
@@ -19,4 +22,5 @@ pfSever.listen(port,()=>{
 
 pfSever.get('/',(req,res)=>{
     console.log(`pfserver started`);
+    
 })
